@@ -1,0 +1,12 @@
+The file will not open properly unless you set up a local host on your computer's terminal.
+
+Open terminal and enter:
+cd <where the file is located> (for e.g. /Users/yourname/Desktop)
+python -m SimpleHTTPServer 8888
+
+
+Afterwards, type in "localhost:8888" on your browser (Chrome works best) and enter.
+
+You will then see the graph on your web browser.
+
+
