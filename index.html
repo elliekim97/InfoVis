@@ -1,0 +1,478 @@
+//ELLIE KIM, SALMA IRAWAN, MONICA MEDIARITO
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+		<meta charset="utf-8">
+		<title>Suicide in Australia</title>
+		<style type="text/css">
+
+			body {
+				background-color: #000;
+			}
+
+			#container {
+				width: 1000px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 100px;
+				margin-bottom: 0px;
+				padding-bottom: 0px;
+				padding: 1px 10px 10px 10px;
+				background-color: black;
+				box-shadow: 1px 1px 1px 1px #000;
+			}
+
+			h1 {text-align: center;
+				font-weight: 300;
+				color: #fff;
+				font-size: 48px;
+				font-family: "Futura";
+				margin-bottom: 20px;
+				margin-top: 10px;
+			}
+
+			h2 {
+				font-weight: 300;
+				color: #fff;
+				font-size: 32px;
+				margin-bottom: 0px;
+				padding-bottom: 0px;
+				margin-top: 15px;
+				font-family: "Roboto";
+				}
+
+			p { color: #fff;
+				font-size: 16px;
+				width: 900px;
+			}
+
+			a {
+				color: white;
+			}
+
+			a:hover {
+				color: white;
+			}
+
+			.footer {
+				font-size: 14px;
+				margin-top: 0px;
+			}
+
+			.button {
+			   border-top: 1px solid #fff;
+			   background: #ffffff;
+			   background: -webkit-gradient(linear, left top, left bottom, from(#d4d4d4), to(#ffffff));
+			   background: -webkit-linear-gradient(top, black, #000080);
+			   background: -moz-linear-gradient(top, black, #000080);
+			   background: -ms-linear-gradient(top, black, #000080);
+			   background: -o-linear-gradient(top, black, #000080);
+			   padding: 4px 10px;
+			   -webkit-border-radius: 6px;
+			   -moz-border-radius: 6px;
+			   border-radius: 6px;
+			   color: #ffffff;
+			   font-size: 14px;
+			   font-family: "Roboto";
+			   text-decoration: none;
+			   vertical-align: middle;
+			   margin-right: 10px;
+			   margin-bottom: 5px;
+			   margin-top: 5px;
+			}
+
+			.button:hover {
+			   border-top-color: #bfc4c7;
+			   background: yellow;
+			   color: #000000;
+			   cursor: pointer;
+			}
+
+			.button:active {
+			   border-top-color: #ffffff;
+			   background: #fff;
+			}
+
+			.button:focus {
+				outline: 0;
+			}
+
+			.btn-group {
+				padding-left: 0px;
+			}
+
+			.bars:hover {
+				fill: maroon;
+			}
+
+			div.tooltip {
+			    position: absolute;
+			    text-align: center;
+				white-space: normal;
+			    padding: 2px;
+			    font-size: 14px;
+			    background: #fff;
+			    border: 1px solid gray;
+			    border-radius: 4px;
+			    pointer-events: none;
+			    cursor: none;
+			}
+
+			svg {
+				background-color: black;
+			}
+
+			.axis path, .axis line {
+				opacity: 1;
+				fill: none;
+				stroke: #b76e79;
+				shape-rendering: crispEdges;
+			}
+
+			.x.axis path {
+				opacity: 1;
+			}
+
+			.y.axis path,
+			.y.axis line {
+				stroke: #b76e79;
+				stroke-dasharray: 1,2;
+				opacity: 1;
+			}
+
+			.axis text {
+				fill: #4e5a64;
+				font-size: 10px;
+			}
+
+		</style>
+		<script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
+	</head>
+	<body>
+		<div id="container">
+			<h1><b>SUICIDE IN AUSTRALIA</b></h1><br><br>
+			<img src="">
+
+			<p>The data shows suicide in Australia from 2010 to 2015.</p>
+			<p>Click on the buttons to change the year. Below these buttons are data on suicide rates for Indigenous and Non Indigenous people. Click on them to see the difference.</p>
+			<br>
+			<div class="btn-group" data-toggle="buttons-radio" >
+				<button type="button" id="a" class="button">2010</button>&nbsp;
+				<button type="button" id="b" class="button">2011</button>&nbsp;
+				<button type="button" id="c" class="button">2012</button>&nbsp;
+				<button type="button" id="d" class="button">2013</button>&nbsp;
+				<button type="button" id="e" class="button">2014</button>&nbsp;
+				<button type="button" id="f" class="button">2015</button><br>
+			</div>
+
+			<div class="btn-group" data-toggle="buttons-radio">
+				<button type="button" id="g" class="button">IND</button>&nbsp;&nbsp;&nbsp;
+				<button type="button" id="h" class="button">IND</button>&nbsp;&nbsp;&nbsp;
+				<button type="button" id="i" class="button">IND</button>&nbsp;&nbsp;&nbsp;
+				<button type="button" id="j" class="button">IND</button>&nbsp;&nbsp;&nbsp;
+				<button type="button" id="k" class="button">IND</button>&nbsp;&nbsp;&nbsp;
+				<button type="button" id="l" class="button">IND</button><br>
+			</div>
+
+			<div class="btn-group" data-toggle="buttons-radio">
+				<button type="button" id="m" class="button">NON</button>&nbsp;
+				<button type="button" id="n" class="button">NON</button>&nbsp;
+				<button type="button" id="o" class="button">NON</button>&nbsp;&nbsp;
+				<button type="button" id="p" class="button">NON</button>&nbsp;&nbsp;
+				<button type="button" id="q" class="button">NON</button>&nbsp;
+				<button type="button" id="r" class="button">NON</button><br><br>
+			</div>
+
+
+			<div id="svganchor"></div>
+<br>
+			<p>The chart contains missing data. For example, in the <b><i>2010 Indigenous Chart</i></b>, only the total number of suicide deaths were recorded for all states by the <a href="https://www.abs.gov.au/">ABS</a>.
+				Some data are missing as a result of privacy and security reasons, or simply because it was not recorded.</p>
+				<br>
+			<p>Source of the data: <a href="https://www.abs.gov.au/AUSSTATS/abs@.nsf/Lookup/3303.0Main+Features22014?OpenDocument">ABS - Causes of Death, Australia</a></p>
+			<p class="footer">by Ellie Kim, Monica Mediarito & Salma Irawan</p>
+			<br>
+		</div>
+
+		<script type="text/javascript">
+
+					var w = 900
+					var h = 400
+					var padding = [ 0, 50, 20, 0 ];  //Top, right, bottom, left
+
+					var xScale = d3.scale.ordinal()
+    									.rangeBands([ padding[3], (w - padding[1]) ], .2);
+
+					var yScale = d3.scale.linear()
+										.range([ h - padding[2], padding[0] ]);
+
+					var xAxis = d3.svg.axis()
+									.scale(xScale)
+									.orient("bottom")
+									.outerTickSize(0)
+									.tickValues(["NSW", "QLD", "VIC", "WA","SA", "TAS", "NT", "ACT", "TOTAL"]);
+
+					var yAxis = d3.svg.axis()
+									.scale(yScale)
+									.orient("right")
+									.ticks(10)
+									.innerTickSize(-(w))
+									.outerTickSize(0);
+
+					var svg = d3.select("#svganchor")
+								.append("svg")
+								.attr("width", w)
+								.attr("height", h);
+
+					var tt = d3.select("#svganchor").append("div")
+					    .attr("class", "tooltip")
+					    .style("opacity", 0);
+
+					var colors = ['#FF0000','#d80000','#b80000','#980000','#700000', '#58000'];
+
+					var ci = 6;
+
+					var esource = "x";
+
+					var label = "y";
+
+					d3.csv("suicide.csv", function(data) {
+
+
+						//Set scale domains
+						xScale.domain(data.map(function(d) {
+							return d.state
+
+
+						}));
+
+
+						var bars = svg.selectAll("rect")
+									.data(data)
+									.enter()
+									.append("rect");
+
+						bars.attr("x", function(d) {
+							return xScale(d.state)
+						})
+							.attr("width", xScale.rangeBand())
+							.attr("y", h - padding[2])
+							.attr("height", 0)
+							.attr("fill", colors[ci])
+							.attr("class", "bars");
+
+						d3.select("#a").on("click", function(){
+							esource = "2010";
+							ci = 1;
+							label = "2010";
+							draw();
+
+						});
+
+						d3.select("#b").on("click", function(){
+							esource = "2011";
+							ci = 2;
+							label = "2011";
+							draw();
+						});
+
+						d3.select("#c").on("click", function(){
+							esource = "2012";
+							ci = 3;
+							label = "2012";
+							draw();
+						});
+
+						d3.select("#d").on("click", function(){
+							esource = "2013";
+							ci = 4;
+							label = "2013";
+							draw();
+						});
+
+						d3.select("#e").on("click", function(){
+							esource = "2014";
+							ci = 4;
+							label = "2014";
+							draw();
+						});
+
+
+
+						d3.select("#f").on("click", function(){
+							esource = "2015";
+							ci = 4;
+							label = "2015";
+							draw();
+						});
+
+
+
+						d3.select("#g").on("click", function(){
+							esource = "expand";
+							ci = 1;
+							label = "INDIGENOUS data";
+							draw();
+
+						});
+
+						d3.select("#h").on("click", function(){
+							esource = "expand1";
+							ci = 2;
+							label = "INDIGENOUS data";
+							draw();
+						});
+
+						d3.select("#i").on("click", function(){
+							esource = "expand2";
+							ci = 3;
+							label = "INDIGENOUS data";
+							draw();
+						});
+
+						d3.select("#j").on("click", function(){
+							esource = "expand3";
+							ci = 4;
+							label = "INDIGENOUS data";
+							draw();
+						});
+
+						d3.select("#k").on("click", function(){
+							esource = "expand4";
+							ci = 4;
+							label = "INDIGENOUS data";
+							draw();
+						});
+
+
+
+						d3.select("#l").on("click", function(){
+							esource = "expand5";
+							ci = 4;
+							label = "INDIGENOUS data";
+							draw();
+						});
+
+
+
+//non indigenous data
+
+d3.select("#m").on("click", function(){
+	esource = "non";
+	ci = 1;
+	label = "NON-INDIGENOUS data";
+	draw();
+
+});
+
+d3.select("#n").on("click", function(){
+	esource = "non1";
+	ci = 2;
+	label = "NON-INDIGENOUS data";
+	draw();
+});
+
+d3.select("#o").on("click", function(){
+	esource = "non2";
+	ci = 3;
+	label = "NON-INDIGENOUS data";
+	draw();
+});
+
+d3.select("#p").on("click", function(){
+	esource = "non3";
+	ci = 4;
+	label = "NON-INDIGENOUS data";
+	draw();
+});
+
+d3.select("#q").on("click", function(){
+	esource = "non4";
+	ci = 4;
+	label = "NON-INDIGENOUS data";
+	draw();
+});
+
+
+
+d3.select("#r").on("click", function(){
+	esource = "non5";
+	ci = 4;
+	label = "NON-INDIGENOUS data";
+	draw();
+});
+
+
+
+
+
+						draw();
+
+						function draw() {
+
+							yScale.domain([
+									0, d3.max(data, function(d) {
+										return +d[esource]
+									})
+								]);
+
+							bars.transition()
+							.delay(function(d, i) {
+								return i * 50
+							})
+							.duration(1000)
+							.attr("y", function(d) {
+								return yScale(d[esource])
+							})
+							.attr("height", function(d) {
+								return h - padding[2] - yScale(d[esource])
+							})
+							.attr("fill", colors[ci]);
+
+							bars.on("mousemove", function(d) {
+								tt.html("&nbspTotal&nbspnumber: " + d[esource] + " in " + label + "&nbsp")
+								.style('top', d3.event.pageY - 12 + 'px')
+				                .style('left', d3.event.pageX + 25 + 'px')
+				                .style("opacity", 0.95);
+							});
+
+							bars.on("mouseout", function() {
+								tt.style("opacity", 0)
+							});
+
+							d3.transition(svg).select(".y.axis")
+							.transition()
+							.duration(2000)
+							.call(yAxis)
+
+							d3.selectAll(".tick")
+						    .filter(function (d) { return d === 0;  })
+						    .remove();
+
+						}
+
+						svg.append("g")
+						.attr("class", "x axis")
+						.attr("transform", "translate(0," + (h - padding[2]) +")")
+						.call(xAxis);
+
+						svg.append("g")
+						.attr("class", "y axis")
+						.attr("transform", "translate(" + (w - (padding[1])) + ",0)")
+						.call(yAxis);
+
+						d3.selectAll(".tick")
+						    .filter(function (d) { return d === 0;  })
+						    .remove();
+
+
+					});
+
+
+		</script>
+	</body>
+</html>
